@@ -1,0 +1,12 @@
+<html>
+<body>
+  Hello! It's now <span id="date"></span>
+</body>
+<script type="text/javascript">
+  var d = document.getElementById("date");
+  var s = new EventSource("/date");
+  s.onmessage = function(e) {
+    d.innerHTML = e.data;
+  };
+</script>
+</html>
